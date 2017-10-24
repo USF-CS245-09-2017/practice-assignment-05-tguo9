@@ -3,14 +3,14 @@
  */
 public class BSTree {
 
-	//Inner class for binary search tree.
+	// Inner class for binary search tree.
 	private class BSTNode {
 
 		public Comparable data;
 		public BSTNode right;
 		public BSTNode left;
 
-		//Constructor
+		// Constructor
 		BSTNode(Comparable newData) {
 
 			data = newData;
@@ -19,12 +19,12 @@ public class BSTree {
 
 	private BSTNode root;
 
-	//Insert node to the tree
+	// Insert node to the tree
 	public void insert(Comparable data) {
 		root = insert(data, root);
 	}
 
-	//Helper methods for insert.
+	// Helper methods for insert.
 	public BSTNode insert(Comparable data, BSTNode node) {
 		if (node == null) {
 			return new BSTNode(data);
@@ -40,13 +40,13 @@ public class BSTree {
 
 	}
 
-	//Find node in the tree.
+	// Find node in the tree.
 	public boolean find(Comparable data) {
 
 		return find(data, root);
 	}
-	
-	//Helper method for find.
+
+	// Helper method for find.
 	private boolean find(Comparable data, BSTNode node) {
 
 		if (node == null) {
@@ -62,13 +62,13 @@ public class BSTree {
 		}
 	}
 
-	//Delete a node in the tree.
+	// Delete a node in the tree.
 	public void delete(Comparable data) {
 		root = delete(data, root);
 
 	}
 
-	//Helper method for delete.
+	// Helper method for delete.
 	private BSTNode delete(Comparable data, BSTNode node) {
 
 		if (node == null) {
@@ -100,7 +100,7 @@ public class BSTree {
 
 	}
 
-	//Helper method for helper method. Remove the smallest in the tree.
+	// Helper method for helper method. Remove the smallest in the tree.
 	private Comparable removeSmallest(BSTNode node) {
 
 		if (node.left.left == null) {
@@ -111,7 +111,7 @@ public class BSTree {
 		return removeSmallest(node.left);
 	}
 
-	//Print the node as left + root + right.
+	// Print the node as left + root + right.
 	public String toStringInOrder() {
 
 		String s1 = (String) root.data;
@@ -122,7 +122,7 @@ public class BSTree {
 		return s4;
 	}
 
-	//Helper method for the toString method.
+	// Helper method for the toString method.
 	private String toStringInOrder(BSTNode node) {
 
 		if (node != null) {
@@ -132,7 +132,7 @@ public class BSTree {
 		}
 	}
 
-	//Print the node as root + left + right.
+	// Print the node as root + left + right.
 	public String toStringPreOrder() {
 
 		String s1 = (String) root.data;
@@ -141,7 +141,7 @@ public class BSTree {
 		return s1 + s2 + s3;
 	}
 
-	//Helper method for the toString method.
+	// Helper method for the toString method.
 	private String toStringPreOrder(BSTNode node) {
 
 		if (node != null) {
